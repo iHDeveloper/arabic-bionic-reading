@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    {{!-- Meta tags --}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Arabic Bionic Reading">
     <meta name="author" content="Muhammad Abd-Elsattar">
 
-    <title>Arabic Bionic Reading</title>
+    <title>قـَـارئ الـعـَـرَبـِـي الإلـكـْـتـْـرُونـِـي</title>
     
-    {{!-- Bootstrap and Core CSS --}}
     <link rel="icon" href="/assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css">
-
+    <script type="module" src="firebase.js"></script>
 </head>
 <body class="mx-auto bg-light">
     <div class="sticky-top github m-3 p-4">
-        <a target="_blank" href="https://github.com/muhammadalsattar/arabic-bionic-reading"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+        <a target="_blank" href="https://github.com/iHDeveloper/arabic-bionic-reading"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
     </div>
-    {{!-- Header --}}
     <header class="container-fluid mx-auto my-4 py-5" id="header">
         <div class="row py-5">
             <div class="col-12">
                 <h1 class="text-right"><b>ه</b>ل <b>تع</b>لم <b>أ</b>ن <b>عق</b>لك <b>يق</b>رأ <b>أس</b>رع <b>م</b>ن <b>عين</b>ك؟ </h1>
             </div>
         </div>
+        <div class="card bg-transparent border-0" id="bionic-text">
+          <div class="card-body">
+            <h5 class="card-title p-4">
+              <b>هذ</b>ا&nbsp<b>المش</b>روع&nbsp<b>ه</b>و&nbsp<b>نس</b>خ&nbsp<b>معد</b>لة&nbsp<b>م</b>ن&nbsp<b>المش</b>روع&nbsp<b>الأس</b>اسي&nbsp<b>ال</b>ذي&nbsp<b>قا</b>م&nbsp<b>ب</b>ه&nbsp<b>الأس</b>تاذ&nbsp<b>مح</b>مد&nbsp<b>عب</b>د&nbsp<b>الس</b>تار&nbsp<b>وف</b>قه&nbsp<b>ال</b>له&nbsp<b>ورع</b>اه،
+              <br />
+              <b>لق</b>د&nbsp<b>ت</b>م&nbsp<b>التع</b>ديل&nbsp<b>عل</b>يه&nbsp<b>م</b>ن&nbsp<b>قب</b>لي&nbsp<b>لك</b>ي&nbsp<b>يسا</b>عد&nbsp<b>المس</b>لمين&nbsp<b>وم</b>ن&nbsp<b>ه</b>م&nbsp<b>أق</b>رب&nbsp<b>م</b>ن&nbsp<b>قلب</b>ي.&nbsp<b>وال</b>له&nbsp<b>الع</b>الم&nbsp<b>بك</b>ل&nbsp<b>الش</b>ي،&nbsp<b>والحمد</b>الله.&nbsp
+            </h5>
+          </div>
+        </div>
     </header>
-    {{!-- Header --}}
 
-    {{!-- Comparison Cards --}}
+
+
+    <hr />
+
     <div class="row my-5" id="comparison">
     <div class="col-sm-6">
         <div class="card border-0" id="bionic-text">
@@ -50,11 +58,9 @@
         </div>
     </div>
     </div>
-    {{!-- End of Comparison cards --}}
 
     <hr/>
 
-    {{!-- Start of transform form --}}
     <form class="form-group d-flex flex-column justify-content-center my-5 py-4 mx-auto" id="transform-form">
         <h2>جرب الآن! قم بنسخ مقالك المفضل ولصقه بالأسفل</h2>
         <div class="my-4">
@@ -62,15 +68,16 @@
         </div>
         <button id="create" type="submit" class="btn btn-dark my-2">انشاء</button>
     </form>
-    {{!-- End of transform form --}}
 
     <hr/>
 
-    <div class="py-5 my-4" id="generated">
-        <h2>بعد لصق النص والضغط على انشاء. يمكنك <a id="browse" >تصفح</a> الملف أو <button disabled="true" role="link" id="download">تحميله</button> على الفور!</h2>    
+    <div class="card border-0" id="bionic-text">
+      <div class="card-body">
+        <h5 class="py-5 my-4 text-wrap" id="generated"></h5>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
-    <script src="/scripts.js"></script>
+    <script type="module" src="scripts.js"></script>
 </body>
 </html>

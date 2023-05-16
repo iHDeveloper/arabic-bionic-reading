@@ -88,6 +88,9 @@ hr{
     width: 85vw;
     margin: 4em auto;
     text-align: center;
+
+    font-size: 1.8em !important;
+    font-weight: 300 !important;
 }
 
 #generated button {
