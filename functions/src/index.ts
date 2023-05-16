@@ -1,8 +1,12 @@
-import { onRequest } from "firebase-functions/v2/https";
+import * as functions from 'firebase-functions/v1';
 
-export const generateArabicBionic = onRequest((req, res) => {
-  const result = transform(req.body.text);
-  res.send({ pages: [result] });
+export const generateArabicBionic = functions.region('europe-west1').https.onCall((data, _) => {
+    if (data.text) {
+        const result = transform(data.text);
+        return { pages: [result] };
+    } else {
+        return { pages: ["unknown error"]};
+    }
 });
 
 function transform(text: string) {

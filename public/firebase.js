@@ -16,7 +16,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const functions = getFunctions(app);
+const functions = getFunctions(app, "europe-west1");
 const generate = httpsCallable(functions, 'generateArabicBionic');
 
 export { generate };

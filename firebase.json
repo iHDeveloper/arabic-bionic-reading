@@ -27,6 +27,7 @@
     "singleProjectMode": true
   },
   "hosting": {
+    "site": "arabic-bionic",
     "public": "public",
     "ignore": [
       "firebase.json",

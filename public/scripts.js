@@ -11,8 +11,7 @@ document.querySelector('#create').addEventListener('click', async function(e) {
         return;
 
     try {
-        console.log(generate);
-        let result = await generate(JSON.stringify({ text }));
+        let result = await generate({ text });
 
         result = await result.data;
 
